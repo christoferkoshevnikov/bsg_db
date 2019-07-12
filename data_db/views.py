@@ -37,7 +37,7 @@ def project_detail(request, slug):
     if request.method == 'GET':
         project = Project.objects.get(slug=slug)
         template = 'data_db/detail.html'
-        context = {'project': Project, 'sample_list': project.samples.all()}
+        context = {'project': project, 'sample_list': project.samples.all()}
         return render(request, template, context)
     elif request.method == 'POST':
         return HttpResponse("add view")

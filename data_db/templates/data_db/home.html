@@ -22,21 +22,23 @@
             <table>
                 {% for Project in project_list %}
                     <tr>
-                        {#<a href="{% url 'data_db:detail' slug='Project.slug' %}">#}
+                        
                             <td style="width:100%">
                                 <div class="created-at">
                                     Created at: <br>
                                     {{ Project.published_on }}
                                 </div>
                                 <div class="project-box" >
-                                    {{ Project.name }} 
+                                    <a href="{% url 'data_db:detail' Project.slug %}">
+                                        {{ Project.name }} 
+                                    </a>
                                 </div>
                                 <div class="shared-with">
                                     Shared with: <br>
                                     {{ Project.slug }}
                                 </div>
                             </td>
-                        <!--</a>-->
+                        
                     </tr>
                 {% endfor %}
             </table>

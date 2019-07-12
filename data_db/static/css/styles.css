@@ -106,14 +106,21 @@ main{
     border-bottom-style: none;
   }
   a{
-    color:black;
-    text-decoration:none;
-    font-size: 20px;
+    color:inherit !important; 
+    text-decoration:none !important;
+    font-size: inherit ;
+  }
+
+  a:active{
+    color:inherit !important; 
+    text-decoration:none !important;
+    font-size: inherit ;
   }
 
   a:hover{
-    color:black;
-    text-decoration:none;
+    color:inherit !important; 
+    text-decoration:none !important;
+    font-size: inherit ;
   }
 
   .alert{
@@ -145,7 +152,7 @@ main{
   .project-box{
     width: 60%;
     text-align: center;
-    font-size: 40px;
+    font-size: 40px !important;
     color: #fff;
   }
 
@@ -167,6 +174,7 @@ main{
     display: flex;
     align-items: flex-end;
     font-size: 12px;
+    padding: 10px;
   }
 
   .shared-with{
@@ -175,4 +183,5 @@ main{
     display: flex;
     align-items: flex-end;
     font-size: 12px;
+    padding: 10px;
   }
