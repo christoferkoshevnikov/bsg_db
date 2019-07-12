@@ -22,7 +22,7 @@ class Project(models.Model):
     slug = models.SlugField(unique=True)
     user = models.ForeignKey(User, on_delete = models.CASCADE)
     name = models.CharField(max_length = 200)    
-    samples = models.ManyToManyField(Sample, blank=True)
+    samples = models.ManyToManyField(Sample)
     published_on = models.DateTimeField(auto_now_add=True)
 
     def save(self, *args, **kwargs):

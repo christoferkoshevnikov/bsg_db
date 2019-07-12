@@ -4,10 +4,10 @@
 
 {% block content %}
 
-{{Project.name}}
+{{ Project.name }}
 
-{% for item in sample_list %}
-
+{% for Sample in sample_list %}
+{{ Sample.name }}
 {% endfor %}
 
 {% endblock %}

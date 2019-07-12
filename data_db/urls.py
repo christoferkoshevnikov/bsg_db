@@ -7,6 +7,7 @@ from .views import(
 )
 
 app_name = 'data_db'
+
 urlpatterns = [
     path('', home_page, name='home'),
     path('login/', views.LoginView.as_view(), name='login'),
