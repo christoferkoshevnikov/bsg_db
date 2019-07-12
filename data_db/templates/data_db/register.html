@@ -1,0 +1,41 @@
+{% extends 'data_db/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+
+
+
+<div class="overcell-1 sl-ft">
+  <div class="cell cell-1">
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-{{message.tags}}">
+        {{message}}
+      </div>
+    {% endfor %}
+  {% endif %}
+  </div>
+    <div class="cell cell-2">
+        <div class="cell cell-3">
+            <div class="content-section">
+                <form method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">Join Today</legend>
+                        {{form|crispy}}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn btn-outline-info" type="submit">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  <div class="cell cell-4"><a href="{% url 'login' %}">Already have An Account login here?</a></div>
+</div>
+
+
+
+
+{% endblock %}
