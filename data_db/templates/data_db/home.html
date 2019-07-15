@@ -16,26 +16,31 @@
                 Logout
             </button>
         </a>
+        <a href="{% url 'data_db:project.views.add' %}"> 
+            <button class="btn-lg btn-secondary" type="button">
+                Add Project
+            </button>
+        </a>
     </div>
     <div class="cell cell-8"> 
         <div style="text-align:left">
             <table>
-                {% for Project in project_list %}
+                {% for project in project_list %}
                     <tr>
                         
                             <td style="width:100%">
                                 <div class="created-at">
                                     Created at: <br>
-                                    {{ Project.published_on }}
+                                    {{ project.published_on }}
                                 </div>
                                 <div class="project-box" >
-                                    <a href="{% url 'data_db:detail' Project.slug %}">
-                                        {{ Project.name }} 
+                                    <a href="{% url 'data_db:project.views.detail' project.slug %}">
+                                        {{ project.name }} 
                                     </a>
                                 </div>
                                 <div class="shared-with">
                                     Shared with: <br>
-                                    {{ Project.slug }}
+                                    {{ project.slug }}
                                 </div>
                             </td>
                         
