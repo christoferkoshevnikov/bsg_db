@@ -33,6 +33,7 @@ def register(request):
         form = UserRegisterForm()
     return render(request, 'data_db/register.html', {'form':form})
 
+@login_required
 def project_detail(request, slug):
     if request.method == 'GET':
         project = Project.objects.get(slug=slug)
@@ -46,8 +47,6 @@ def project_detail(request, slug):
     elif request.method == 'DELETE':
         return HttpResponse("delete view")
 
-
-"""
 @login_required
 def project_create_view(request):
     form = ProjectModelForm(request.POST or None)
@@ -60,7 +59,7 @@ def project_create_view(request):
     template_name = 'Projects/add_project.html'
     context = {'form': form}
     return render(request, template_name, context)
-"""
+    
 """
     def get(self, request, *args, **kwargs):
         model = Project

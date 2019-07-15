@@ -155,6 +155,11 @@ main{
     font-size: 40px !important;
     color: #fff;
   }
+  .project-boxtwo{
+    text-align: center;
+    font-size: 40px !important;
+    color: aliceblue;
+  }
 
   tr:nth-child(odd){
     background-color: #c4c4c4;
