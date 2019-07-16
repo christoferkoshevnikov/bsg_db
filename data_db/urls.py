@@ -14,6 +14,6 @@ urlpatterns = [
     path('login/', views.LoginView.as_view(), name='login'),
     path('logout/', views.LogoutView.as_view(), name='logout'),
     path('register/', register, name='register'),
-    path('project/add', ProjectCreateView.as_view(), name='project.views.add'),
+    path('project/add/', ProjectCreateView.as_view(), name='project.views.add'),
     path('project/<slug:slug>/', project_detail, name='project.views.detail'),
 ]

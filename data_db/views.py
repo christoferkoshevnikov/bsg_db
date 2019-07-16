@@ -73,7 +73,9 @@ class ProjectCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         object = form.save(commit=False)
         object.save()
-        return HttpResponseRedirect(self.get_success_url())
+        #return HttpResponseRedirect(self.get_success_url())
+        self.success_url = self.model.get_absolute_url(object)
+        return HttpResponseRedirect(self.success_url)
 
-    def get_success_url(self):
-        return slugify(self.request.POST['name'])
+#    def get_success_url(self):
+#        return slugify(self.request.POST['name'])

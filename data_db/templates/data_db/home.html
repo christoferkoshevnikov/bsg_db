@@ -34,7 +34,8 @@
                                     {{ project.published_on }}
                                 </div>
                                 <div class="project-box" >
-                                    <a href="{% url 'data_db:project.views.detail' project.slug %}">
+                                    {% comment %}<a href="{% url 'data_db:project.views.detail' project.slug %}">{% endcomment %}
+                                    <a href="{{ project.get_absolute_url }}">
                                         {{ project.name }} 
                                     </a>
                                 </div>
