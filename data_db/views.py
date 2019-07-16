@@ -68,14 +68,9 @@ class ProjectCreateView(LoginRequiredMixin, CreateView):
 
     model=Project
     template_name = 'data_db/add-project.html'
-    fields = ('name', 'samples', 'user')
+    fields = ('name', 'samples')
     
     def form_valid(self, form):
-        object = form.save(commit=False)
-        object.save()
-        #return HttpResponseRedirect(self.get_success_url())
-        self.success_url = self.model.get_absolute_url(object)
-        return HttpResponseRedirect(self.success_url)
-
-#    def get_success_url(self):
-#        return slugify(self.request.POST['name'])
+        form.instance.user = self.request.user
+        form.save()
+        return HttpResponseRedirect(self.model.get_absolute_url(form.instance))
